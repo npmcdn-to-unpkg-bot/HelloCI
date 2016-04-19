@@ -12,10 +12,10 @@
                     <div class="col l4 offset-l2 s12">
                         <h5 class="white-text">링크</h5>
                         <ul>
-                            <?php for($i = 0; $i < count($links); $i++){ ?>
+                            <?php foreach($links as $text => $href){ ?>
                             <li>
-                                <a class="grey-text text-lighten-3" href="<?= $links[$i][1] ?>">
-                                    <?= $links[$i][0] ?>
+                                <a class="grey-text text-lighten-3" href="<?= $href ?>">
+                                    <?= $text ?>
                                 </a>
                             </li>
                             <?php } ?>

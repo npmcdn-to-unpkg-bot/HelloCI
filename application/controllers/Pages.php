@@ -8,9 +8,10 @@ class Pages extends CI_Controller {
         $data['brand_color'] = 'pink';
         $data['footer_title'] = 'DIMIGOIN';
         $data['footer_description'] = '';
-        $data['links'] = array(
-            array('웹하드', 'http://dimigo.hs.kr/1')
-        );
+        $data['links'] = [
+            '웹하드' => 'http://dimigo.hs.kr/1',
+            'DIMI VOCA' => 'http://voca.0pe.kr'
+        ];
 
         $this->load->view('templates/header', $data);
         $this->load->view('pages/' . $page,   $data);
