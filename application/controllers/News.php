@@ -8,8 +8,10 @@ class News extends CI_Controller {
     }
 
     public function index(){
+        $data['page'] = 'news';
         $data['news'] = $this->news_model->get_news();
         $data['title'] = 'News archive';
+        $data['layers'] = ['DIMIGOIN' => 'home'];
 
         $this->load->view('templates/header', $data);
         $this->load->view('news/index', $data);
@@ -20,8 +22,12 @@ class News extends CI_Controller {
         $data['news_item'] = $this->news_model->get_news($slug);
         if(empty($data['news_item'])) show_404();
 
+        $data['page'] = 'news-item';
         $data['title'] = $data['news_item']['title'];
-        $data['layers'] = ['news archive' => 'news'];
+        $data['layers'] = [
+            'DIMIGOIN' => 'home',
+            'news archive' => 'news'
+        ];
 
         $this->load->view('templates/header', $data);
         $this->load->view('news/view', $data);

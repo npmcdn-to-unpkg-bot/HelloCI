@@ -1,10 +1,14 @@
 <?php
 
 class Pages extends CI_Controller {
-    public function view($page = 'home'){
-        if(!file_exists(APPPATH . 'views/pages/' . $page . '.php')) show_404();
+    public function __construct(){
+        parent::__construct();
+        $this->load->helper('url_helper');
+    }
 
-        $data['title'] = ucfirst($page);
+    public function view($page = 'home'){
+        $data['page'] = $page;
+        $data['title'] = (strtolower($page) == 'home') ? 'DIMIGOIN' : ucfirst($page);
         $data['footer_title'] = 'DIMIGOIN';
 
         $data['links'] = [

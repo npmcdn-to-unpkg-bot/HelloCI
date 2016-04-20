@@ -34,3 +34,7 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+.grid-item {
+    min-width: 256px;
+}

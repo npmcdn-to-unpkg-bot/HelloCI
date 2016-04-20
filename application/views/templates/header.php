@@ -30,4 +30,4 @@
             </div>
         </nav>
 
-        <main class="section">
+        <main>

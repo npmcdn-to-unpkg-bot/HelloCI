@@ -34,5 +34,9 @@
         <script charset="utf-8" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
         <script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
         <script charset="utf-8" src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+        <script charset="utf-8" src="/public/js/common.js"></script>
+        <?php if(file_exists(FCPATH . 'public/js/' . $page . '.js')){ ?>
+        <script charset="utf-8" src="/public/js/<?= $page ?>.js"></script>
+        <?php } ?>
     </body>
 </html>
