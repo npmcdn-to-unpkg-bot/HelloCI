@@ -1,8 +1,28 @@
-:focus { outline:none; }
-::-moz-focus-inner { border:0; }
+@import url(https://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,400,400italic,500,500italic,700,700italic);
+
+* {
+    font-family: 'Ubuntu', '나눔바른고딕', 'NanumBarunGothic', 'Nanum Barun Gothic', sans-serif;
+}
+
+:focus {
+    outline: none;
+}
+
+::-moz-focus-inner {
+    border: 0;
+}
+
+::selection {
+    background-color: #EC6363;
+}
+
+::-moz-selection {
+    background-color: #EC6363;
+}
 
 nav, footer.page-footer {
-    background-color: rgb(252, 103, 103);
+    background-color: #FC6767;
 }
 
 body {
