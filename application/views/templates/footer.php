@@ -5,7 +5,9 @@
                 <div class="row">
                     <div class="col l6 s12">
                         <h5 class="white-text"><?= isset($footer_title) ? $footer_title : $title ?></h5>
-                        <p class="grey-text text-lighten-4"><?= isset($footer_description) ? $footer_description : "한국디지털미디어고등학교 인트라넷: 디미고인" ?></p>
+                        <p class="grey-text text-lighten-4">
+                            <?= isset($footer_description) ? $footer_description : "한국디지털미디어고등학교 인트라넷 디미고인" ?>
+                        </p>
                     </div>
 
                     <?php if(isset($links) and is_array($links)){ ?>
@@ -13,11 +15,7 @@
                         <h5 class="white-text">링크</h5>
                         <ul>
                             <?php foreach($links as $text => $href){ ?>
-                            <li>
-                                <a class="grey-text text-lighten-3" href="<?= $href ?>">
-                                    <?= $text ?>
-                                </a>
-                            </li>
+                            <li><a class="grey-text text-lighten-3" href="<?= $href ?>"><?= $text ?></a></li>
                             <?php } ?>
                         </ul>
                     </div>

@@ -1,0 +1,16 @@
+:focus { outline:none; }
+::-moz-focus-inner { border:0; }
+
+nav, footer.page-footer {
+    background-color: rgb(252, 103, 103);
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
