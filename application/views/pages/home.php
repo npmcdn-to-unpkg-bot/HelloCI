@@ -16,16 +16,15 @@
 <?php
 
 $url = 'http://dimigo.in/pages/dimibob_getdata.php?d=' . date('Ymd');
-$data = json_decode(file_get_contents($url), true);
-if(isset($data)) foreach(['breakfast' => "아침", 'lunch' => "점심", 'dinner' => "저녁", 'snack' => "간식"] as $key => $meal){
+$data = json_decode(file_get_contents($url), true); if(isset($data)){
 
 ?>
 
 <div class="container section">
+
     <table>
         <tbody>
-            <?php if(isset($data[$key]) and is_string($data[$key])){ ?>
-
+            <?php foreach(['breakfast' => "아침", 'lunch' => "점심", 'dinner' => "저녁", 'snack' => "간식"] as $key => $meal) if(isset($data[$key]) and is_string($data[$key])){ ?>
             <tr>
                 <td><?= $meal ?></td>
                 <td>
