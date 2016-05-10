@@ -13,20 +13,23 @@
     <div class="parallax"><img src="http://dimigo.hs.kr/layouts/dimigo_v2/images/sub.bg/03.jpg"></div>
 </div>
 
+<?php
+
+$url = 'http://dimigo.in/pages/dimibob_getdata.php?d=' . date('Ymd');
+$data = json_decode(file_get_contents($url), true);
+if(isset($data)) foreach(['breakfast' => "아침", 'lunch' => "점심", 'dinner' => "저녁", 'snack' => "간식"] as $key => $meal){
+
+?>
+
 <div class="container section">
     <table>
         <tbody>
-            <?php foreach([
-                "아침" => "치킨너겟 쌀밥 호박고추장찌개 메추리알곤약볶음 시금치나물 포기김치 사과",
-                "점심" => "삼치조림 잡곡밥 순두부찌개 잡채 명엽채볶음 숙주나물 깍두기 꽈배기",
-                "저녁" => "핫도그버거 볶음밥 크림스프 오이피클 깍두기 나쵸 쵸코우유",
-                "간식" => "츄러스 치즈빵 오렌지쥬스"
-            ] as $meal => $foods){ ?>
+            <?php if(isset($data[$key]) and is_string($data[$key])){ ?>
 
             <tr>
                 <td><?= $meal ?></td>
                 <td>
-                    <?php foreach(explode(" ", $foods) as $food){ ?>
+                    <?php foreach(preg_split("(/|\\*)", $data[$key]) as $food) if(trim($food) != ''){ ?>
                     <div class="chip"><?= $food ?></div>&nbsp;
                     <?php } ?>
                 </td>
@@ -36,3 +39,5 @@
         </tbody>
     </table>
 </div>
+
+<?php } ?>
