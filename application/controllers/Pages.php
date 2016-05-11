@@ -3,6 +3,9 @@
  * 정적 페이지 컨트롤러
  */
 class Pages extends CI_Controller {
+    /**
+     * 정적 페이지 불러오기
+     */
     public function view($page = 'main'){
         if(!file_exists(APPPATH . 'views/pages/' . $page . '.php')) show_404();
         $this->load->helper(['form', 'url']);

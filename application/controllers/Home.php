@@ -4,6 +4,9 @@
  * 홈페이지 메인
  */
 class Home extends CI_Controller {
+    /**
+     * 홈페이지 처리
+     */
     public function index(){
         $this->load->library('session');
         $this->load->helper(['form', 'url']);
@@ -27,6 +30,9 @@ class Home extends CI_Controller {
         $this->load->view('templates/footer', $data);
     }
 
+    /**
+     * 로그아웃 처리
+     */
     function logout(){
         $this->load->library('session');
         $this->session->unset_userdata('logged_in');
